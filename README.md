@@ -1,2 +1,2 @@
 # MaskCAE
-Our code will be coming soon.
+When the review is complete, we will release the code.
