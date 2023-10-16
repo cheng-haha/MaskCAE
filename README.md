@@ -3,6 +3,4 @@
 
 <p align="center"><strong>When the review is complete, we will release the code.</strong></p>
 
-_Maybe this is a novel direction for Self-Supervised HAR._
-
 ## It's believed that the code will come soon!
