@@ -3,4 +3,5 @@
 
 <p align="center"><strong>When the review is complete, we will release the code.</strong></p>
 
-## It's believed that the code will come soon!
+
+<h2 align="center"> It's believed that the code will come soon! </h2>
