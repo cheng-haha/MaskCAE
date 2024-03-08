@@ -1,4 +1,4 @@
-<h1 align="center">MaskCAE: the first to use mask convolutional autoencoder in HAR</h1>
+<h1 align="center">MaskCAE: the first to use Mask Convolutional AutoEncoder in HAR</h1>
 <p align="center"><a href="https://cheng-haha.github.io/">Dongzhou Cheng</a></p>
 
 <h2 align="center"> When the review is complete, we will release the code.</h2>
