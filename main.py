@@ -1,7 +1,7 @@
 '''
 Description: 
 Date: 2023-05-07 18:23:46
-LastEditTime: 2024-08-13 18:55:56
+LastEditTime: 2024-08-13 20:06:35
 FilePath: /chengdongzhou/action/MaskCAE/main.py
 '''
 
@@ -16,7 +16,7 @@ import numpy as np
 
 from create_dataset import GetHarDataset, dotdict
 from dataloaders import data_set
-from utils.logger import initialize_logger,Recorder
+from utils.logger import initialize_logger
 from utils.setup import set_seed,GetModel
 from train import MetaTrain
 from trainers.evalution import evaluate
@@ -62,7 +62,6 @@ if __name__ == "__main__":
             dataset.update_train_val_test_keys()
             args.Part       = dataset.index_of_cv
             args.num_of_cv  = dataset.num_of_cv
-            recorder        = Recorder(args)
             
             train_data      = data_set(data_args,dataset,"train")
             test_data       = data_set(data_args,dataset,"test")
@@ -84,13 +83,6 @@ if __name__ == "__main__":
             train = MetaTrain(args)
             print(f'The training method is {train.__name__}')
             stat = train(train_data,vali_data,logger)
-            recorder.rs_valid_loss       = stat['Test_losses']
-            recorder.rs_valid_acc        = stat['Acc_tests']
-            recorder.rs_valid_mf1        = stat['mF1_tests']
-            recorder.rs_valid_wf1        = stat['wF1_tests']
-            recorder.rs_valid_recall     = stat['Recall_tests']
-            recorder.rs_valid_precision  = stat['Precision_test']
-            recorder.save_results(i)
             wandb.join() if args.use_wandb else None
             model = GetModel()
             total_loss, acc_test, mf1_test, wf1_test, recall_test, precision_test , stat = evaluate(model,logger=logger,epoch = stat['best_epoch'],eval_loader=test_data,stat=stat)
@@ -108,10 +100,9 @@ if __name__ == "__main__":
     wf1_tests       = average_times(wf1_tests)
     recall_tests    = average_times(recall_tests)
     precision_tests = average_times(precision_tests)
-    for metric in ['acc', 'mf1', 'wf1', 'recall', 'precision']  :
-        setattr( recorder, f'rs_test_{metric}', eval( f'{metric}_tests' ) )
+
         
-    logger.info(f'==>LOCV Averaged Acc is {np.around( np.mean( recorder.rs_test_acc       ) * 100 , 3 )}\n')
-    logger.info(f'==>LOCV Averaged mF1 is {np.around( np.mean( recorder.rs_test_mf1       ) * 100 , 3 )}\n')
-    logger.info(f'==>LOCV Averaged wF1 is {np.around( np.mean( recorder.rs_test_wf1       ) * 100 , 3 )}\n')
+    logger.info(f'==>LOCV Averaged Acc is {np.around( np.mean( acc_tests       ) * 100 , 3 )}\n')
+    logger.info(f'==>LOCV Averaged mF1 is {np.around( np.mean( mf1_tests       ) * 100 , 3 )}\n')
+    logger.info(f'==>LOCV Averaged wF1 is {np.around( np.mean( wf1_tests       ) * 100 , 3 )}\n')
 
