@@ -1,0 +1,36 @@
+
+#  exp_mode: LOCV or Given
+
+uschad:
+  filename: "USC-HAD"
+  overlap_rate: 0.5
+  down_sample: True
+  sampling_freq: 30
+  num_classes: 12
+  num_channels: 6
+  window_seconds: 1.0
+  exp_mode: 'Given'
+  valid_rate: 0.2
+
+motion:
+  filename: "MotionSense"
+  overlap_rate: 0.5
+  down_sample: False
+  sampling_freq: 50
+  num_classes: 6
+  num_channels: 12
+  window_seconds: 2.56
+  exp_mode: 'Given'
+  valid_rate: 0.2
+
+ucihar:
+  filename: "UCI HAR Dataset"
+  overlap_rate: 0.5
+  down_sample: False  
+  sampling_freq: 50
+  num_classes: 6
+  num_channels: 9
+  window_seconds: 2.56
+  exp_mode: 'Given'
+  valid_rate: 0.2
+  

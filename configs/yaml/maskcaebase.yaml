@@ -1,0 +1,26 @@
+
+# parameters
+epochs: 100
+learning_rate: 0.0001
+batch_size: 512
+device: 1
+times: 1
+
+model: 'BaseCNN'
+pre_trained_path: ''
+lr_scale: 0
+warm_up_epochs: 0
+train_portion: 1.0
+mask: -1
+
+# optim
+opt_type: 'adamw'
+decay_epochs: 20
+gamma: 0.1
+momentum: 0.9 
+weight_decay: 0.0
+
+use_wandb: False
+multicrop: False
+
+chhander: True
