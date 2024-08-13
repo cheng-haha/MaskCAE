@@ -1,15 +1,15 @@
 <h1 align="center">MaskCAE: Mask Convolutional AutoEncoder for HAR</h1>
+<p align="center"><a href="https://cheng-haha.github.io/papers/MaskCAE.pdf">Paper</a></p>
 <p align="center"><a href="https://cheng-haha.github.io/">Dongzhou Cheng</a></p>
 
 ## If you use this project, please cite our papers.
 ```
-@article{cheng2023learning,
-  title={Learning hierarchical time series data augmentation invariances via contrastive supervision for human activity recognition},
-  author={Cheng, Dongzhou and Zhang, Lei and Bu, Can and Wu, Hao and Song, Aiguo},
-  journal={Knowledge-Based Systems},
-  pages={110789},
-  year={2023},
-  publisher={Elsevier}
+@article{cheng2024maskcae,
+  title={MaskCAE: Masked Convolutional AutoEncoder via Sensor Data Reconstruction for Self-Supervised Human Activity Recognition},
+  author={Cheng, Dongzhou and Zhang, Lei and Qin, Lutong and Wang, Shuoyuan and Wu, Hao and Song, Aiguo},
+  journal={IEEE Journal of Biomedical and Health Informatics},
+  year={2024},
+  publisher={IEEE}
 }
 ```
 ```
