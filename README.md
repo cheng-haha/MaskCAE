@@ -1,8 +1,8 @@
-<h1 align="center">MaskCAE: Mask Convolutional AutoEncoder for HAR</h1>
+<h1 align="center">🌟MaskCAE: Mask Convolutional AutoEncoder for HAR</h1>
 <p align="center"><a href="https://cheng-haha.github.io/papers/MaskCAE.pdf">Paper</a></p>
 <p align="center"><a href="https://cheng-haha.github.io/">Dongzhou Cheng</a></p>
 
-## If you use this project, please cite our papers.
+## 🔆🚀If you use this project, please cite our papers.
 ```
 @article{cheng2024maskcae,
   title={MaskCAE: Masked Convolutional AutoEncoder via Sensor Data Reconstruction for Self-Supervised Human Activity Recognition},
